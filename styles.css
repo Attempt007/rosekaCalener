@@ -1,0 +1,181 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: lightgray; /* Light background color */
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 28px;
+    color: #ff6f61; /* Soft coral color */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Button Styles */
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: 2px solid #ff6f61; /* Coral border color */
+    background-color: #ffffff; /* White background */
+    color: #ff6f61; /* Coral text color */
+    cursor: pointer;
+    border-radius: 30px; /* Rounded buttons */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    outline: none;
+}
+
+button:hover {
+    background-color: #ff6f61; /* Coral background on hover */
+    color: #ffffff; /* White text on hover */
+    border-color: #e55a4e; /* Slightly darker coral border on hover */
+    transform: scale(1.05); /* Button scaling effect */
+}
+
+button:focus {
+    outline: 3px solid #ff6f61; /* Coral outline on focus */
+}
+
+/* Calendar Styles */
+.calendar {
+    border: 2px solid #ff6f61; /* Coral border around the calendar */
+    background-color: #ffffff; /* White background for the calendar */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px; /* Smaller responsive width */
+}
+
+.header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #ffebee; /* Very light coral pink */
+    font-weight: bold;
+    color: #ff6f61;
+    border-bottom: 2px solid #ff6f61; /* Coral border under the header */
+}
+
+.day {
+    text-align: center;
+    padding: 10px; /* Reduced padding */
+    font-size: 12px; /* Smaller font size */
+    color: #ff6f61;
+    border-right: 1px solid #ffebee; /* Light coral border between days */
+}
+
+.day:last-child {
+    border-right: none; /* Remove border from the last day */
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.date {
+    text-align: center;
+    padding: 8px; /* Reduced padding */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 50%; /* Circular shape */
+    width: 30px; /* Set a smaller width */
+    height: 30px; /* Set a smaller height */
+    line-height: 30px; /* Center the text vertically */
+    display: inline-block; /* Ensure the circle is properly sized */
+    font-size: 12px; /* Smaller font size */
+}
+
+.date.today {
+    background-color: #ff6f61; /* Coral background for today's date */
+    color: white; /* White text color */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+/* Specific Date Types */
+.date.start-of-term {
+    background-color: green; /* Green for start of term */
+    color: white;
+}
+
+.date.end-of-term {
+    background-color: goldenrod; /* Goldenrod for end of term */
+    color: white;
+}
+
+.date.parent-teacher-meeting {
+    background-color: #00bcd4; /* Light blue for parent-teacher meeting */
+    color: white;
+}
+
+.date.teacher-development-day {
+    background-color: purple; /* Purple for teacher development day */
+    color: white;
+}
+
+.date.holiday {
+    background-color: yellow; /* Yellow for holidays */
+    color: black;
+}
+
+.date.graduation-ceremonies {
+    background-color: red; /* Red for graduation ceremonies */
+    color: white;
+}
+
+.date.fees-due-date {
+    background-color: #67601c; /* Dark yellow for fees due date */
+    color: black;
+}
+
+.empty {
+    background-color: #fef9f6; /* Matches body background */
+}
+
+/* Popup Styles */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: #fff; /* White background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Heart Animation Container */
+#heartContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Prevent interaction with hearts */
+    font-size: 24px; /* Size of the heart symbol */
+}
+
+.heart {
+    position: absolute;
+    color: red;
+    opacity: 0; /* Initially hidden */
+    font-size: 24px; /* Size of the heart symbol */
+}
+
+@keyframes fly {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(0.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh) scale(1.5);
+    }
+}
